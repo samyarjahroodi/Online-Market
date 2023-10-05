@@ -26,16 +26,16 @@ public class UserServiceImpl
             user.setName(scanner.nextLine());
             user.setUsername(Validation.isValidUsernameForRegistration());
             while (true) {
-                if (!repository.doesUserExist(user.getUsername())) {
-                    System.out.println("This username is new");
+                System.out.println("Enter a username");
+                String username = scanner.nextLine();
+                if (!repository.doesUserExist(username)) {
+                    user.setUsername(username);
                     break;
                 } else {
-                    System.out.println("This username already exist");
-                    System.out.println("Enter new username");
-                    user.setUsername(scanner.nextLine());
-                    break;
+                    System.out.println("This username already exists. Please enter a different username.");
                 }
             }
+
             user.setPassword(Validation.isValidPasswordForRegistration());
             int result = repository.register(user);
             if (result != 0) {
