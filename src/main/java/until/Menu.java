@@ -74,6 +74,9 @@ public class Menu {
                 default:
                     System.out.println("There is no available number for your choice");
             }
+            System.out.println("********************************************************************************************************");
+            System.out.println("************************************ Developed by Samyar Jahroodi **************************************");
+            System.out.println("********************************************************************************************************");
 
 
         }
