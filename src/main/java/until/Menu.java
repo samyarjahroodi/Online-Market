@@ -38,10 +38,8 @@ public class Menu {
             break;
         }
         while (true) {
-            System.out.println("These are available products for customers");
-            cartService.loadAllShoes();
-            cartService.loadAllElectronicAppliances();
             System.out.println("These are options");
+            System.out.println("0-Available products");
             System.out.println("1- add to your cart");
             System.out.println("2- delete from your cart");
             System.out.println("3- edit your cart");
@@ -50,6 +48,9 @@ public class Menu {
             System.out.println("6- if you want to exit press 6");
             int choice = scanner.nextInt();
             switch (choice) {
+                case 0:
+                    cartService.loadAllShoes();
+                    cartService.loadAllElectronicAppliances();
                 case 1:
                     cartService.add();
                     break;

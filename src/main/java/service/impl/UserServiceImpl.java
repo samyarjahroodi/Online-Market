@@ -75,7 +75,7 @@ public class UserServiceImpl
                     System.out.println("SUCCESSFULLY LOGGED IN");
                     break;
                 } else {
-                    System.out.println("THERE IS A PROBLEM WITH EITHER YOUR USERNAME OR PASSWORD");
+                    System.out.println("THERE IS A PROBLEM WITH YOUR PASSWORD");
                 }
             }
 
