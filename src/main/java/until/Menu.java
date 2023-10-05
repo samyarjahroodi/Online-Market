@@ -46,11 +46,15 @@ public class Menu {
             System.out.println("4- see your items");
             System.out.println("5- see your sum");
             System.out.println("6- if you want to exit press 6");
+            System.out.println("********************************************************************************************************");
+            System.out.println("************************************ Developed by Samyar Jahroodi **************************************");
+            System.out.println("********************************************************************************************************");
             int choice = scanner.nextInt();
             switch (choice) {
                 case 0:
                     cartService.loadAllShoes();
                     cartService.loadAllElectronicAppliances();
+                    break;
                 case 1:
                     cartService.add();
                     break;
@@ -74,9 +78,6 @@ public class Menu {
                 default:
                     System.out.println("There is no available number for your choice");
             }
-            System.out.println("********************************************************************************************************");
-            System.out.println("************************************ Developed by Samyar Jahroodi **************************************");
-            System.out.println("********************************************************************************************************");
 
 
         }
