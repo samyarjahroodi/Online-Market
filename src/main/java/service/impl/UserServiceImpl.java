@@ -5,6 +5,7 @@ import entity.User;
 import repository.UserRepository;
 import repository.impl.UserRepositoryImpl;
 import service.UserService;
+import until.Validation;
 
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -23,8 +24,7 @@ public class UserServiceImpl
         try {
             System.out.println("Enter your name");
             user.setName(scanner.nextLine());
-            System.out.println("Enter your username");
-            user.setUsername(scanner.nextLine());
+            user.setUsername(Validation.isValidUsernameForRegistration());
             while (true) {
                 if (!repository.doesUserExist(user.getUsername())) {
                     System.out.println("This username is new");
@@ -36,9 +36,7 @@ public class UserServiceImpl
                     break;
                 }
             }
-
-            System.out.println("Enter your password");
-            user.setPassword(scanner.nextLine());
+            user.setPassword(Validation.isValidPasswordForRegistration());
             int result = repository.register(user);
             if (result != 0) {
                 System.out.println("SUCCESSFULLY ADDED TO THE DATABASE");
